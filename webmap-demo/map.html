@@ -1,0 +1,2894 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7f97cad11c99ed3d4c46a25d89832602 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    top: 100px; left: 20px; /* Moves the legend down */
+    width: 260px; 
+    max-height: 400px; /* Allows more space before scrolling */
+    background-color: rgba(255, 255, 255, 0.95); 
+    z-index: 10000; font-size: 13px; /* Adjust font size slightly */
+    border-radius: 8px; padding: 12px; 
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    overflow-y: auto; /* Enables scrolling if needed */
+">
+    <b>Legend</b><br>
+    <hr style="margin: 5px 0;">
+    <div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#E5E4E2; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>alternative SR32 route</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#DC7633; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>congestion problem</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#145A32; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>finish the SR32 trail</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#1E8449; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>Improve Landscaping</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#2ECC71; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>improve pedestrian crossing</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#1ABC9C; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>improve sidewalk/trails/biking facilities</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#48C9B0; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>improve walkable city centers</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#800080; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>Limit the developments</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#00008B; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>more commercials/local commercials</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#3498DB; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>preserve rural character/farm lands/corridor view/dark sky/wildlife</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#654321; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>proposing roundabout/bypass</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#B7950B; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>reduce parking</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#FFFF00; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>safety issue</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#FF0000; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>Speeding Issues</div><div style="display: flex; align-items: center; margin: 7px 0;">
+        <div style="width: 18px; height: 18px; background:#808080; 
+        margin-right: 12px; border-radius: 4px; border: 1px solid black;"></div>other</div>
+</div>
+    
+            <div class="folium-map" id="map_7f97cad11c99ed3d4c46a25d89832602" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7f97cad11c99ed3d4c46a25d89832602 = L.map(
+                "map_7f97cad11c99ed3d4c46a25d89832602",
+                {
+                    center: [40.65931070808825, -111.28462486438117],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6099f166b2cd39ad0cc45a366dd42fd5 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6099f166b2cd39ad0cc45a366dd42fd5.addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+            var circle_marker_bfcf3ada11323ab1aa05f017a4701b75 = L.circleMarker(
+                [40.714816256951956, -111.29953184453414],
+                {"bubblingMouseEvents": true, "color": "#00008B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00008B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_4ed47f69f62e53c13ef44809a69583b1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_3a91b2be0544b9bbe27288ad48ecb615 = $(`<div id="html_3a91b2be0544b9bbe27288ad48ecb615" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> more commercials/local commercials<br>     <b>ID:</b> 36<br>     <b>Comments:</b> Oakley needs more commercial activity. The old rodeo grounds are being wasted - restaurants larger grocery store etc.L<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_4ed47f69f62e53c13ef44809a69583b1.setContent(html_3a91b2be0544b9bbe27288ad48ecb615);
+            
+        
+
+        circle_marker_bfcf3ada11323ab1aa05f017a4701b75.bindPopup(popup_4ed47f69f62e53c13ef44809a69583b1)
+        ;
+
+        
+    
+    
+            var circle_marker_25d0e2efb6412fb790e78be22ece5ae9 = L.circleMarker(
+                [40.71359795242964, -111.30035190574104],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_c5b796db8b0ae1619cd662fd52a25199 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_983aeb2a0ff4441d9c898f05afafbf3a = $(`<div id="html_983aeb2a0ff4441d9c898f05afafbf3a" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 3<br>     <b>Comments:</b> Speeding issue in Oakley <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_c5b796db8b0ae1619cd662fd52a25199.setContent(html_983aeb2a0ff4441d9c898f05afafbf3a);
+            
+        
+
+        circle_marker_25d0e2efb6412fb790e78be22ece5ae9.bindPopup(popup_c5b796db8b0ae1619cd662fd52a25199)
+        ;
+
+        
+    
+    
+            var circle_marker_16b091f4288dd1e5790969bca8b31211 = L.circleMarker(
+                [40.71290176840769, -111.3001550910514],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_5b7740d4e2ebabcf6529b8b39f5661dc = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_27d0338d2a7acd115e3214399f97b011 = $(`<div id="html_27d0338d2a7acd115e3214399f97b011" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 33<br>     <b>Comments:</b> Excessive speed angular road access (Millrace) narrow cooridoor lack of pedestrian trail <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_5b7740d4e2ebabcf6529b8b39f5661dc.setContent(html_27d0338d2a7acd115e3214399f97b011);
+            
+        
+
+        circle_marker_16b091f4288dd1e5790969bca8b31211.bindPopup(popup_5b7740d4e2ebabcf6529b8b39f5661dc)
+        ;
+
+        
+    
+    
+            var circle_marker_06b80b41e0c23889849019d68447b451 = L.circleMarker(
+                [40.689290343422556, -111.28104820529586],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_03789a327d032a111f9046e4ada077c0 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_44e9feb76d00e47dbfb12b00c45f40dd = $(`<div id="html_44e9feb76d00e47dbfb12b00c45f40dd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 2<br>     <b>Comments:</b> Love the views along SR-32 trail<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_03789a327d032a111f9046e4ada077c0.setContent(html_44e9feb76d00e47dbfb12b00c45f40dd);
+            
+        
+
+        circle_marker_06b80b41e0c23889849019d68447b451.bindPopup(popup_03789a327d032a111f9046e4ada077c0)
+        ;
+
+        
+    
+    
+            var circle_marker_629ba7e3afcf9c03324cc3760479db6e = L.circleMarker(
+                [40.683456000903504, -111.28026254176935],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_33d89dd071656e2d8d7452e024c80238 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_23d0c8cc460e57fae97585b3345faf67 = $(`<div id="html_23d0c8cc460e57fae97585b3345faf67" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 37<br>     <b>Comments:</b> Enhance the Marion park. Make it a community gathering spot on the SR32 trail.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_33d89dd071656e2d8d7452e024c80238.setContent(html_23d0c8cc460e57fae97585b3345faf67);
+            
+        
+
+        circle_marker_629ba7e3afcf9c03324cc3760479db6e.bindPopup(popup_33d89dd071656e2d8d7452e024c80238)
+        ;
+
+        
+    
+    
+            var circle_marker_6d5b217b5a7ede26af2b6a6686251231 = L.circleMarker(
+                [40.68302456797239, -111.28091274606716],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_e21a1264cafe9a6216cd66c0d0b194da = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_62c77e1b27129579a1ee2bd9c815eb24 = $(`<div id="html_62c77e1b27129579a1ee2bd9c815eb24" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 4<br>     <b>Comments:</b> Speeding Continues to be an issue <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_e21a1264cafe9a6216cd66c0d0b194da.setContent(html_62c77e1b27129579a1ee2bd9c815eb24);
+            
+        
+
+        circle_marker_6d5b217b5a7ede26af2b6a6686251231.bindPopup(popup_e21a1264cafe9a6216cd66c0d0b194da)
+        ;
+
+        
+    
+    
+            var circle_marker_4c54e1b5f99137e42bffaeeed8833510 = L.circleMarker(
+                [40.6799017320689, -111.2809398379129],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_212aaed1b2ced50f9ef4731ae1a0126b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2b7fef37cb58ab5b42a1446c2660340b = $(`<div id="html_2b7fef37cb58ab5b42a1446c2660340b" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 5<br>     <b>Comments:</b> Please finish the SR32 trail. It connects nothing right now. It needs to start in Oakley City Center and end at Francis rodeo grounds. <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_212aaed1b2ced50f9ef4731ae1a0126b.setContent(html_2b7fef37cb58ab5b42a1446c2660340b);
+            
+        
+
+        circle_marker_4c54e1b5f99137e42bffaeeed8833510.bindPopup(popup_212aaed1b2ced50f9ef4731ae1a0126b)
+        ;
+
+        
+    
+    
+            var circle_marker_3c1f6eb298a6126aa6d7078e824deb37 = L.circleMarker(
+                [40.67758005530248, -111.28076374091557],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_3ee9457deb9cfada90158ed820427d64 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b351875dc8a61c8448c7843b5e097e2e = $(`<div id="html_b351875dc8a61c8448c7843b5e097e2e" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 6<br>     <b>Comments:</b> Like the SR 32 trail <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_3ee9457deb9cfada90158ed820427d64.setContent(html_b351875dc8a61c8448c7843b5e097e2e);
+            
+        
+
+        circle_marker_3c1f6eb298a6126aa6d7078e824deb37.bindPopup(popup_3ee9457deb9cfada90158ed820427d64)
+        ;
+
+        
+    
+    
+            var circle_marker_7550435a8842344a53b3b798cdd914ef = L.circleMarker(
+                [40.71779501521067, -111.30023220540222],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_59e8142714cfa6589f9763523133824b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2e24b27b1f1b390c4a274d047fdefecd = $(`<div id="html_2e24b27b1f1b390c4a274d047fdefecd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 16<br>     <b>Comments:</b> Speed and poor sight distance on hill <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_59e8142714cfa6589f9763523133824b.setContent(html_2e24b27b1f1b390c4a274d047fdefecd);
+            
+        
+
+        circle_marker_7550435a8842344a53b3b798cdd914ef.bindPopup(popup_59e8142714cfa6589f9763523133824b)
+        ;
+
+        
+    
+    
+            var circle_marker_a2007d385bfd8cf43690c7af58692cc1 = L.circleMarker(
+                [40.6770856538892, -111.2807982963532],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_4f605d897cb5fa18b3278ae925b92f0a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ccb65cae0cb0b755cca577486c7414a2 = $(`<div id="html_ccb65cae0cb0b755cca577486c7414a2" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 7<br>     <b>Comments:</b> Speeding is a BIG problem. Cars use the walking trail to pass. Has anyone considered somehow adding turns or curves on this stretch of highway to slow traffic? What will happen with the homes along SR32 if the road is widened?<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_4f605d897cb5fa18b3278ae925b92f0a.setContent(html_ccb65cae0cb0b755cca577486c7414a2);
+            
+        
+
+        circle_marker_a2007d385bfd8cf43690c7af58692cc1.bindPopup(popup_4f605d897cb5fa18b3278ae925b92f0a)
+        ;
+
+        
+    
+    
+            var circle_marker_d5e3834f63e3a8ed24a4bf8c9d52d898 = L.circleMarker(
+                [40.6750866149692, -111.28064870719116],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_bdf0b4c0a52effd44d3e5ed32bbbc842 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_c24ee3c99341825290e58315937d907e = $(`<div id="html_c24ee3c99341825290e58315937d907e" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 15<br>     <b>Comments:</b> The walking path gets flooded whenever it rains or the snow melts - attachment<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_bdf0b4c0a52effd44d3e5ed32bbbc842.setContent(html_c24ee3c99341825290e58315937d907e);
+            
+        
+
+        circle_marker_d5e3834f63e3a8ed24a4bf8c9d52d898.bindPopup(popup_bdf0b4c0a52effd44d3e5ed32bbbc842)
+        ;
+
+        
+    
+    
+            var circle_marker_0ff7b0cbd7f0684fe3ccf5d1b44f1fc1 = L.circleMarker(
+                [40.674959995334774, -111.2811495637605],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_cf0f2eed39f2b55650df8b5867c54569 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_856df33b333e82fde58e540a8dad0177 = $(`<div id="html_856df33b333e82fde58e540a8dad0177" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 8<br>     <b>Comments:</b> Speeding is a big issue. Cars going north drive off the road almost onto the trail passing cars turning left going into the lower loop<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_cf0f2eed39f2b55650df8b5867c54569.setContent(html_856df33b333e82fde58e540a8dad0177);
+            
+        
+
+        circle_marker_0ff7b0cbd7f0684fe3ccf5d1b44f1fc1.bindPopup(popup_cf0f2eed39f2b55650df8b5867c54569)
+        ;
+
+        
+    
+    
+            var circle_marker_b6a6ceb7366fc4c8214d0d423c0d0d8a = L.circleMarker(
+                [40.673947029602324, -111.2807043579211],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_fe3dfb28f54755f1bab74b07bf88cc7e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_399a4c003abda2a816a18cf070c70edd = $(`<div id="html_399a4c003abda2a816a18cf070c70edd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 14<br>     <b>Comments:</b> Not a Road private farm land access only. Remove from map.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_fe3dfb28f54755f1bab74b07bf88cc7e.setContent(html_399a4c003abda2a816a18cf070c70edd);
+            
+        
+
+        circle_marker_b6a6ceb7366fc4c8214d0d423c0d0d8a.bindPopup(popup_fe3dfb28f54755f1bab74b07bf88cc7e)
+        ;
+
+        
+    
+    
+            var circle_marker_8f10ae3e73a5e081981a8488957b37d3 = L.circleMarker(
+                [40.67145675675571, -111.2807043579211],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_b15909a07bfc59de7bde2a46851b2f04 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4e162140c55fcd0f76f6b36405e4eb38 = $(`<div id="html_4e162140c55fcd0f76f6b36405e4eb38" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 9<br>     <b>Comments:</b> Finish the bike path from Marion to Kamas<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_b15909a07bfc59de7bde2a46851b2f04.setContent(html_4e162140c55fcd0f76f6b36405e4eb38);
+            
+        
+
+        circle_marker_8f10ae3e73a5e081981a8488957b37d3.bindPopup(popup_b15909a07bfc59de7bde2a46851b2f04)
+        ;
+
+        
+    
+    
+            var circle_marker_90b71077bb9c463f66470381012a5e0c = L.circleMarker(
+                [40.66997499797517, -111.28094044034447],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7e1660e59ac4955403570b7eb98e61a0 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_47b084c06bd4f0a0ea29520cde43059c = $(`<div id="html_47b084c06bd4f0a0ea29520cde43059c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 13<br>     <b>Comments:</b> Lower the speed limit by another 5 mph. Too many drivelway cuts to make current speed limit safe<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7e1660e59ac4955403570b7eb98e61a0.setContent(html_47b084c06bd4f0a0ea29520cde43059c);
+            
+        
+
+        circle_marker_90b71077bb9c463f66470381012a5e0c.bindPopup(popup_7e1660e59ac4955403570b7eb98e61a0)
+        ;
+
+        
+    
+    
+            var circle_marker_49df1ac199eb0c331449b11232b4b1ab = L.circleMarker(
+                [40.66766258906693, -111.28054278327711],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_bcc4ab8fe6c753cda58ee8177795c91a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b4df8cfc06e34196abd806427c5fa71f = $(`<div id="html_b4df8cfc06e34196abd806427c5fa71f" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 10<br>     <b>Comments:</b> Finish the bike path <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_bcc4ab8fe6c753cda58ee8177795c91a.setContent(html_b4df8cfc06e34196abd806427c5fa71f);
+            
+        
+
+        circle_marker_49df1ac199eb0c331449b11232b4b1ab.bindPopup(popup_bcc4ab8fe6c753cda58ee8177795c91a)
+        ;
+
+        
+    
+    
+            var circle_marker_c72ed72f9fe643dd594e14152e53a5ba = L.circleMarker(
+                [40.66590309379069, -111.28120554505605],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_3fb003797d458af2f5e1154df7592253 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ded238edcbbd09b100d6e156f709c1ad = $(`<div id="html_ded238edcbbd09b100d6e156f709c1ad" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> safety issue<br>     <b>ID:</b> 12<br>     <b>Comments:</b> Incentivize agritourism businesses in order to preserve the rural character and open views outside of city centers.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_3fb003797d458af2f5e1154df7592253.setContent(html_ded238edcbbd09b100d6e156f709c1ad);
+            
+        
+
+        circle_marker_c72ed72f9fe643dd594e14152e53a5ba.bindPopup(popup_3fb003797d458af2f5e1154df7592253)
+        ;
+
+        
+    
+    
+            var circle_marker_2745361efc3225fe68b1fbd685bdbf05 = L.circleMarker(
+                [40.66454573714581, -111.28117240696706],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_77913b3ec88c0fa5d0dea0d286be2bb1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_76e170880f8ccfac70dc18fde3109167 = $(`<div id="html_76e170880f8ccfac70dc18fde3109167" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 11<br>     <b>Comments:</b> Lower the speed limit from Kamas to Oakley. 50mph is still too high and drivers go well above that. There have been a numner of accidents along here.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_77913b3ec88c0fa5d0dea0d286be2bb1.setContent(html_76e170880f8ccfac70dc18fde3109167);
+            
+        
+
+        circle_marker_2745361efc3225fe68b1fbd685bdbf05.bindPopup(popup_77913b3ec88c0fa5d0dea0d286be2bb1)
+        ;
+
+        
+    
+    
+            var circle_marker_b49ce180a5c25c38c1537c6ac38f5fe6 = L.circleMarker(
+                [40.66173039085406, -111.28037709283235],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E8449", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f4b40cd3d9f15ed8dc4c517f53987be2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ae160b2105488d75da086a01b7a03109 = $(`<div id="html_ae160b2105488d75da086a01b7a03109" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Improve Landscaping<br>     <b>ID:</b> 26<br>     <b>Comments:</b> Adding noise abatement landscaping along this stretch would be wonderful<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_f4b40cd3d9f15ed8dc4c517f53987be2.setContent(html_ae160b2105488d75da086a01b7a03109);
+            
+        
+
+        circle_marker_b49ce180a5c25c38c1537c6ac38f5fe6.bindPopup(popup_f4b40cd3d9f15ed8dc4c517f53987be2)
+        ;
+
+        
+    
+    
+            var circle_marker_0976d10017eaf4da127d948f053b0d27 = L.circleMarker(
+                [40.64657072536714, -111.28073332728854],
+                {"bubblingMouseEvents": true, "color": "#00008B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00008B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_ecbb26019935e035c50be0bf375db5e1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_6afd85d27c099e7755c25d9ea7240618 = $(`<div id="html_6afd85d27c099e7755c25d9ea7240618" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> more commercials/local commercials<br>     <b>ID:</b> 17<br>     <b>Comments:</b> Create incentives for economic opportunity (all three towns). Kamas has so much potential. It should not be a "pass-through" town.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_ecbb26019935e035c50be0bf375db5e1.setContent(html_6afd85d27c099e7755c25d9ea7240618);
+            
+        
+
+        circle_marker_0976d10017eaf4da127d948f053b0d27.bindPopup(popup_ecbb26019935e035c50be0bf375db5e1)
+        ;
+
+        
+    
+    
+            var circle_marker_9915f1734198a40660dfe14a71f77d6b = L.circleMarker(
+                [40.645036968690114, -111.28084931059985],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_675698bab23cbb56e5e1489179158d0e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_de4b2efe8edd18797aa4c3f9817b46d5 = $(`<div id="html_de4b2efe8edd18797aa4c3f9817b46d5" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 25<br>     <b>Comments:</b> Not every old building is "historic". Let's not get stuck in the past for fear of the future.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_675698bab23cbb56e5e1489179158d0e.setContent(html_de4b2efe8edd18797aa4c3f9817b46d5);
+            
+        
+
+        circle_marker_9915f1734198a40660dfe14a71f77d6b.bindPopup(popup_675698bab23cbb56e5e1489179158d0e)
+        ;
+
+        
+    
+    
+            var circle_marker_21b6ddc9319e74766287e09b1ed23d8f = L.circleMarker(
+                [40.64394423042929, -111.2807214271866],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_a352cf43d212c3077ed29d177c44d11b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_520c6c2cce75b74ef354b8d7f01f16c1 = $(`<div id="html_520c6c2cce75b74ef354b8d7f01f16c1" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 18<br>     <b>Comments:</b> Lower the speed limit through Kamas to 30 MPH. Kids and adults cannot make it across the road without running<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_a352cf43d212c3077ed29d177c44d11b.setContent(html_520c6c2cce75b74ef354b8d7f01f16c1);
+            
+        
+
+        circle_marker_21b6ddc9319e74766287e09b1ed23d8f.bindPopup(popup_a352cf43d212c3077ed29d177c44d11b)
+        ;
+
+        
+    
+    
+            var circle_marker_47c4ae3955a921909784a0fb816f553c = L.circleMarker(
+                [40.64238023868448, -111.2807214271866],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_355aaa7f4f6c7ea5e52dd829258a4d3b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_aee563cff075062ab859154f7e0c841d = $(`<div id="html_aee563cff075062ab859154f7e0c841d" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 24<br>     <b>Comments:</b> Lower speed limit in all city centers to make it easier for visitors to decide to stop and shop.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_355aaa7f4f6c7ea5e52dd829258a4d3b.setContent(html_aee563cff075062ab859154f7e0c841d);
+            
+        
+
+        circle_marker_47c4ae3955a921909784a0fb816f553c.bindPopup(popup_355aaa7f4f6c7ea5e52dd829258a4d3b)
+        ;
+
+        
+    
+    
+            var circle_marker_af2b3de57da5baf5d049f00f5782913d = L.circleMarker(
+                [40.64113612817225, -111.28065115933457],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_a36f97df8ed025025b45a90d84145b01 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_69d1dc7abc3854490220555087888061 = $(`<div id="html_69d1dc7abc3854490220555087888061" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 19<br>     <b>Comments:</b> Redesign Kamas Commercial Main Street to include a bike pathway and narrow lanes so speed is decreased. I have witnessed so many groups who don't stand a chance making it across the street before someone who is doing 5 mph over speedlimit mows them down.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_a36f97df8ed025025b45a90d84145b01.setContent(html_69d1dc7abc3854490220555087888061);
+            
+        
+
+        circle_marker_af2b3de57da5baf5d049f00f5782913d.bindPopup(popup_a36f97df8ed025025b45a90d84145b01)
+        ;
+
+        
+    
+    
+            var circle_marker_384b9781c8a8425a583c28781f94e87d = L.circleMarker(
+                [40.63992754147075, -111.28074484980395],
+                {"bubblingMouseEvents": true, "color": "#DC7633", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#DC7633", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_0953ff699a4c2ceb2f5f74614fdd6e74 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5716f8d6fcccf83ac790429f89b8d1c5 = $(`<div id="html_5716f8d6fcccf83ac790429f89b8d1c5" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> congestion problem<br>     <b>ID:</b> 23<br>     <b>Comments:</b> Busy intersection in the summer <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_0953ff699a4c2ceb2f5f74614fdd6e74.setContent(html_5716f8d6fcccf83ac790429f89b8d1c5);
+            
+        
+
+        circle_marker_384b9781c8a8425a583c28781f94e87d.bindPopup(popup_0953ff699a4c2ceb2f5f74614fdd6e74)
+        ;
+
+        
+    
+    
+            var circle_marker_f29edd642f6c2aac2dec464246a0bb85 = L.circleMarker(
+                [40.63596393447854, -111.2806043140999],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_740ceb3c3f22808c9e590e9d9c5b090e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_299bc54dd72061adf25cdbfea9a4fdd7 = $(`<div id="html_299bc54dd72061adf25cdbfea9a4fdd7" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 20<br>     <b>Comments:</b> Finalize (and enforce) a wholistic valley-wide trail network with the SR32 trail as the trail "highway". Consult with South Summit Trails Foundation.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_740ceb3c3f22808c9e590e9d9c5b090e.setContent(html_299bc54dd72061adf25cdbfea9a4fdd7);
+            
+        
+
+        circle_marker_f29edd642f6c2aac2dec464246a0bb85.bindPopup(popup_740ceb3c3f22808c9e590e9d9c5b090e)
+        ;
+
+        
+    
+    
+            var circle_marker_7e24e345944333bec528bdef74be35d5 = L.circleMarker(
+                [40.63448863052645, -111.28067458195194],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f095916e3ed1db9ced1e7e3de395fd95 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_74872b0e8fa9a5b73f422546aa46b180 = $(`<div id="html_74872b0e8fa9a5b73f422546aa46b180" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 22<br>     <b>Comments:</b> Extend the bike path to Francis.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_f095916e3ed1db9ced1e7e3de395fd95.setContent(html_74872b0e8fa9a5b73f422546aa46b180);
+            
+        
+
+        circle_marker_7e24e345944333bec528bdef74be35d5.bindPopup(popup_f095916e3ed1db9ced1e7e3de395fd95)
+        ;
+
+        
+    
+    
+            var circle_marker_0a18d7781c9b6a0e0928cb7fccdb527d = L.circleMarker(
+                [40.6413494059069, -111.275334225198],
+                {"bubblingMouseEvents": true, "color": "#48C9B0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48C9B0", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_573162b0aaff6656cdf4c81fda8279bb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_08d1a388dc8f53171f5d3adaedc00dbc = $(`<div id="html_08d1a388dc8f53171f5d3adaedc00dbc" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve walkable city centers<br>     <b>ID:</b> 21<br>     <b>Comments:</b> Beautify Beaver Creek with a safe walkable community trail<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_573162b0aaff6656cdf4c81fda8279bb.setContent(html_08d1a388dc8f53171f5d3adaedc00dbc);
+            
+        
+
+        circle_marker_0a18d7781c9b6a0e0928cb7fccdb527d.bindPopup(popup_573162b0aaff6656cdf4c81fda8279bb)
+        ;
+
+        
+    
+    
+            var circle_marker_8455a40b0d5cf3640b2e2b4129856595 = L.circleMarker(
+                [40.63939433449893, -111.26118696432349],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_188e9e2ad246bfb62232537f6efb2f6b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_cc2cc4aaf075a8afd205809cd1157206 = $(`<div id="html_cc2cc4aaf075a8afd205809cd1157206" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 31<br>     <b>Comments:</b> Bike path from Kamas to Slate Creek trailhead<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_188e9e2ad246bfb62232537f6efb2f6b.setContent(html_cc2cc4aaf075a8afd205809cd1157206);
+            
+        
+
+        circle_marker_8455a40b0d5cf3640b2e2b4129856595.bindPopup(popup_188e9e2ad246bfb62232537f6efb2f6b)
+        ;
+
+        
+    
+    
+            var circle_marker_bbd3ed66f44c0c0288df70cab2ea95e7 = L.circleMarker(
+                [40.62414281239298, -111.28053404624788],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_fb16506bf2e461824a712260044a6fe9 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5ab622440987b34c424c0eec68e8b828 = $(`<div id="html_5ab622440987b34c424c0eec68e8b828" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 27<br>     <b>Comments:</b> Maintain the valley farm land - No more Ivory Homes Developments<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_fb16506bf2e461824a712260044a6fe9.setContent(html_5ab622440987b34c424c0eec68e8b828);
+            
+        
+
+        circle_marker_bbd3ed66f44c0c0288df70cab2ea95e7.bindPopup(popup_fb16506bf2e461824a712260044a6fe9)
+        ;
+
+        
+    
+    
+            var circle_marker_0eb2997fdcb32826a9cf63890ffa8598 = L.circleMarker(
+                [40.61888040684451, -111.28137726047218],
+                {"bubblingMouseEvents": true, "color": "#800080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_0c870dc2837ce68bd3c4087a479881f2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a57100c2e2e55ea933682cccef990634 = $(`<div id="html_a57100c2e2e55ea933682cccef990634" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Limit the developments<br>     <b>ID:</b> 35<br>     <b>Comments:</b> Put a pause on commercial development or change the zoning entirely.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_0c870dc2837ce68bd3c4087a479881f2.setContent(html_a57100c2e2e55ea933682cccef990634);
+            
+        
+
+        circle_marker_0eb2997fdcb32826a9cf63890ffa8598.bindPopup(popup_0c870dc2837ce68bd3c4087a479881f2)
+        ;
+
+        
+    
+    
+            var circle_marker_b75b2c392fb4638c4153a0a95a457471 = L.circleMarker(
+                [40.61536005280351, -111.28090880812533],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_9795b50a30c24fd040d5ab2565bbbd1c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a86ad3b969a94ce06e32148dd00d8d66 = $(`<div id="html_a86ad3b969a94ce06e32148dd00d8d66" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 28<br>     <b>Comments:</b> (This goes for all 3 towns) Stop building 4 bedroom single family homes. We need apartments and townhomes for FIRST TIME buyers.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_9795b50a30c24fd040d5ab2565bbbd1c.setContent(html_a86ad3b969a94ce06e32148dd00d8d66);
+            
+        
+
+        circle_marker_b75b2c392fb4638c4153a0a95a457471.bindPopup(popup_9795b50a30c24fd040d5ab2565bbbd1c)
+        ;
+
+        
+    
+    
+            var circle_marker_c504fcb78a251b919c4bb39ffd678494 = L.circleMarker(
+                [40.613226414619994, -111.28109618906409],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_11c0c35c3ba2d17579037337cd9ff800 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_078f3aab3e46e20cc338041827cf0b9d = $(`<div id="html_078f3aab3e46e20cc338041827cf0b9d" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 32<br>     <b>Comments:</b> Create a trail system for walking and biking<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_11c0c35c3ba2d17579037337cd9ff800.setContent(html_078f3aab3e46e20cc338041827cf0b9d);
+            
+        
+
+        circle_marker_c504fcb78a251b919c4bb39ffd678494.bindPopup(popup_11c0c35c3ba2d17579037337cd9ff800)
+        ;
+
+        
+    
+    
+            var circle_marker_8cc2e18224cb1b086e811aa1ba923f5b = L.circleMarker(
+                [40.61102158358432, -111.28062773671724],
+                {"bubblingMouseEvents": true, "color": "#00008B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00008B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_c8f99c8d474e0ed251f7abe58df8360a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_106497bb341af082eb7d81279831560a = $(`<div id="html_106497bb341af082eb7d81279831560a" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> more commercials/local commercials<br>     <b>ID:</b> 29<br>     <b>Comments:</b> Would love to see more stores and places to eat<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_c8f99c8d474e0ed251f7abe58df8360a.setContent(html_106497bb341af082eb7d81279831560a);
+            
+        
+
+        circle_marker_8cc2e18224cb1b086e811aa1ba923f5b.bindPopup(popup_c8f99c8d474e0ed251f7abe58df8360a)
+        ;
+
+        
+    
+    
+            var circle_marker_4bac26aa4eb0ccaad98863a6cb3ff946 = L.circleMarker(
+                [40.60750081545411, -111.28081511765595],
+                {"bubblingMouseEvents": true, "color": "#00008B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00008B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_68e1985bcfd01c221476d267fac9b6cf = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4e112d6fc0152be8040f74ce71391e64 = $(`<div id="html_4e112d6fc0152be8040f74ce71391e64" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> more commercials/local commercials<br>     <b>ID:</b> 34<br>     <b>Comments:</b> A large grocery store with wide variety of options. A state liquor store like the one in Park City with more options.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_68e1985bcfd01c221476d267fac9b6cf.setContent(html_4e112d6fc0152be8040f74ce71391e64);
+            
+        
+
+        circle_marker_4bac26aa4eb0ccaad98863a6cb3ff946.bindPopup(popup_68e1985bcfd01c221476d267fac9b6cf)
+        ;
+
+        
+    
+    
+            var circle_marker_779b289074d2e4c493d9ac38ee1ff35c = L.circleMarker(
+                [40.71371780399013, -111.28325106985953],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_86c9e252e4c00b310a959daaaaa01410 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_fb20f5d89d6e2347604af76a93dce515 = $(`<div id="html_fb20f5d89d6e2347604af76a93dce515" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 30<br>     <b>Comments:</b> Amazing job on the trail system in and around Oakley. Keep going. More of this. <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_86c9e252e4c00b310a959daaaaa01410.setContent(html_fb20f5d89d6e2347604af76a93dce515);
+            
+        
+
+        circle_marker_779b289074d2e4c493d9ac38ee1ff35c.bindPopup(popup_86c9e252e4c00b310a959daaaaa01410)
+        ;
+
+        
+    
+    
+            var circle_marker_7a2db4ebae017f8fc1187b8fde988995 = L.circleMarker(
+                [40.70729918208189, -111.29081833620812],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_4ac7e708866d38b4437e27b4404871cf = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5423cf1bffcd1c4482364fc55042b0bd = $(`<div id="html_5423cf1bffcd1c4482364fc55042b0bd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 38<br>     <b>Comments:</b> strengthen up dark sky<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_4ac7e708866d38b4437e27b4404871cf.setContent(html_5423cf1bffcd1c4482364fc55042b0bd);
+            
+        
+
+        circle_marker_7a2db4ebae017f8fc1187b8fde988995.bindPopup(popup_4ac7e708866d38b4437e27b4404871cf)
+        ;
+
+        
+    
+    
+            var circle_marker_b9a83c522d8e3da179f64a71c2d96cbc = L.circleMarker(
+                [40.71066522658262, -111.29628612088428],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_0c60e05c3e0998040eaafc97e0e812fa = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2f61c5142f9416cfd2356b9e085770a6 = $(`<div id="html_2f61c5142f9416cfd2356b9e085770a6" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 39<br>     <b>Comments:</b> Protect the deer crossing<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_0c60e05c3e0998040eaafc97e0e812fa.setContent(html_2f61c5142f9416cfd2356b9e085770a6);
+            
+        
+
+        circle_marker_b9a83c522d8e3da179f64a71c2d96cbc.bindPopup(popup_0c60e05c3e0998040eaafc97e0e812fa)
+        ;
+
+        
+    
+    
+            var circle_marker_b4d28d60369ce9ecb20eaa0217a82a81 = L.circleMarker(
+                [40.71164486428425, -111.2982412681321],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7d13cc69ff6780c13c2b2de4f20fb4c7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_baac45744c548e9413def54c2aea0dce = $(`<div id="html_baac45744c548e9413def54c2aea0dce" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 40<br>     <b>Comments:</b> too many speeders<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7d13cc69ff6780c13c2b2de4f20fb4c7.setContent(html_baac45744c548e9413def54c2aea0dce);
+            
+        
+
+        circle_marker_b4d28d60369ce9ecb20eaa0217a82a81.bindPopup(popup_7d13cc69ff6780c13c2b2de4f20fb4c7)
+        ;
+
+        
+    
+    
+            var circle_marker_97bfddc13ffc2a9fedf3a7a9bb499d5c = L.circleMarker(
+                [40.71104201201966, -111.29625298279534],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_b0a055fad7146929dff302aa790e016b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d3ce021f2b03259ffd2fd45267634bbc = $(`<div id="html_d3ce021f2b03259ffd2fd45267634bbc" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 41<br>     <b>Comments:</b> over passed or tunnels for safely crossing<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_b0a055fad7146929dff302aa790e016b.setContent(html_d3ce021f2b03259ffd2fd45267634bbc);
+            
+        
+
+        circle_marker_97bfddc13ffc2a9fedf3a7a9bb499d5c.bindPopup(popup_b0a055fad7146929dff302aa790e016b)
+        ;
+
+        
+    
+    
+            var circle_marker_2e434f225b52ce2fad424dd5a0677f2b = L.circleMarker(
+                [40.71385527589062, -111.29976562022362],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_8addf1adbccc4ff8156594bcdd49201e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_40136fc77abeb0790b6a0dfee40ac061 = $(`<div id="html_40136fc77abeb0790b6a0dfee40ac061" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 42<br>     <b>Comments:</b> need sidewalks<br>     <b>Likes:</b> 5<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_8addf1adbccc4ff8156594bcdd49201e.setContent(html_40136fc77abeb0790b6a0dfee40ac061);
+            
+        
+
+        circle_marker_2e434f225b52ce2fad424dd5a0677f2b.bindPopup(popup_8addf1adbccc4ff8156594bcdd49201e)
+        ;
+
+        
+    
+    
+            var circle_marker_b7da034b0c2052b1459817eee6090be0 = L.circleMarker(
+                [40.71611584822194, -111.30006386302415],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_1333188be75981a5af197400e128a24c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_295639df0fbf86856314da87c4846822 = $(`<div id="html_295639df0fbf86856314da87c4846822" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 43<br>     <b>Comments:</b> slow down traffic<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_1333188be75981a5af197400e128a24c.setContent(html_295639df0fbf86856314da87c4846822);
+            
+        
+
+        circle_marker_b7da034b0c2052b1459817eee6090be0.bindPopup(popup_1333188be75981a5af197400e128a24c)
+        ;
+
+        
+    
+    
+            var circle_marker_0966d8527cf3ef0d86bea9af4795ef21 = L.circleMarker(
+                [40.717713900961456, -111.30031861208288],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7ae1737c38afab72b4e21ed25cb2e605 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8f9fb8ba40639c0ed1eb07571e500e4f = $(`<div id="html_8f9fb8ba40639c0ed1eb07571e500e4f" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> safety issue<br>     <b>ID:</b> 44<br>     <b>Comments:</b> North Hills connection to city centers please! refuse to bike because of unsafe highway conditions.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7ae1737c38afab72b4e21ed25cb2e605.setContent(html_8f9fb8ba40639c0ed1eb07571e500e4f);
+            
+        
+
+        circle_marker_0966d8527cf3ef0d86bea9af4795ef21.bindPopup(popup_7ae1737c38afab72b4e21ed25cb2e605)
+        ;
+
+        
+    
+    
+            var circle_marker_dac0c61ff8c40989bd930eeb9550aa2c = L.circleMarker(
+                [40.71699807854421, -111.29708557728007],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_cedb4d10338f25f895ef6d84acb38bda = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ca541cb8a9442aa87169e4f810b158e1 = $(`<div id="html_ca541cb8a9442aa87169e4f810b158e1" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 45<br>     <b>Comments:</b> Beware of wildlife Moose!<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_cedb4d10338f25f895ef6d84acb38bda.setContent(html_ca541cb8a9442aa87169e4f810b158e1);
+            
+        
+
+        circle_marker_dac0c61ff8c40989bd930eeb9550aa2c.bindPopup(popup_cedb4d10338f25f895ef6d84acb38bda)
+        ;
+
+        
+    
+    
+            var circle_marker_00f0aa5d1b40ab302b24b859a8051540 = L.circleMarker(
+                [40.71782692485004, -111.29576005372223],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_04ff4dd4fe6f320e135b6072a2e87dde = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_bda145b6ed124f4cbfc8a22e971952e0 = $(`<div id="html_bda145b6ed124f4cbfc8a22e971952e0" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 46<br>     <b>Comments:</b> New lane for weber canyon trail<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_04ff4dd4fe6f320e135b6072a2e87dde.setContent(html_bda145b6ed124f4cbfc8a22e971952e0);
+            
+        
+
+        circle_marker_00f0aa5d1b40ab302b24b859a8051540.bindPopup(popup_04ff4dd4fe6f320e135b6072a2e87dde)
+        ;
+
+        
+    
+    
+            var circle_marker_d268d951e78c36695f1962420e6be1d3 = L.circleMarker(
+                [40.711124583546514, -111.29233062381623],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_4bc79f6a0cc9ffa9764c6e7e66d312bc = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9801cb9cefad9eaeeab1498924e137ed = $(`<div id="html_9801cb9cefad9eaeeab1498924e137ed" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 47<br>     <b>Comments:</b> connecting trail on canal.<br>     <b>Likes:</b> 6<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_4bc79f6a0cc9ffa9764c6e7e66d312bc.setContent(html_9801cb9cefad9eaeeab1498924e137ed);
+            
+        
+
+        circle_marker_d268d951e78c36695f1962420e6be1d3.bindPopup(popup_4bc79f6a0cc9ffa9764c6e7e66d312bc)
+        ;
+
+        
+    
+    
+            var circle_marker_5e3a30701f5b10c75c01b5c5c108281b = L.circleMarker(
+                [40.70868769984509, -111.29793194526349],
+                {"bubblingMouseEvents": true, "color": "#E5E4E2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E5E4E2", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_a5327b315b437131b87772bc75f530eb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f173fe69b85167d74912473e3873e2cb = $(`<div id="html_f173fe69b85167d74912473e3873e2cb" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> alternative SR32 route<br>     <b>ID:</b> 48<br>     <b>Comments:</b> Do not connect Oakley to trail or SR32.  too busy to congested. Consider going down new lane and connect to other trails.  Proposed route would be safer, less congested, more pleasing to users.<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_a5327b315b437131b87772bc75f530eb.setContent(html_f173fe69b85167d74912473e3873e2cb);
+            
+        
+
+        circle_marker_5e3a30701f5b10c75c01b5c5c108281b.bindPopup(popup_a5327b315b437131b87772bc75f530eb)
+        ;
+
+        
+    
+    
+            var circle_marker_5c42f27e458215847dc209e3a732316d = L.circleMarker(
+                [40.70861464255403, -111.29754643690269],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_47d156cab8d5e1ade4d68825b2bca360 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_3cbb93dbae5374ddce41903d5486167e = $(`<div id="html_3cbb93dbae5374ddce41903d5486167e" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 49<br>     <b>Comments:</b> But we still need a way to walk to the city centers.<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_47d156cab8d5e1ade4d68825b2bca360.setContent(html_3cbb93dbae5374ddce41903d5486167e);
+            
+        
+
+        circle_marker_5c42f27e458215847dc209e3a732316d.bindPopup(popup_47d156cab8d5e1ade4d68825b2bca360)
+        ;
+
+        
+    
+    
+            var circle_marker_d8e0d3109666d673b4a8a0cfe033d379 = L.circleMarker(
+                [40.64496681501374, -111.28079301725333],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_9278b242bf9e5be7e21c5258d91a3e25 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f1813cffd579d8bbf2de5a5f4404ad7c = $(`<div id="html_f1813cffd579d8bbf2de5a5f4404ad7c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 50<br>     <b>Comments:</b> Better pedestrian crossing.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_9278b242bf9e5be7e21c5258d91a3e25.setContent(html_f1813cffd579d8bbf2de5a5f4404ad7c);
+            
+        
+
+        circle_marker_d8e0d3109666d673b4a8a0cfe033d379.bindPopup(popup_9278b242bf9e5be7e21c5258d91a3e25)
+        ;
+
+        
+    
+    
+            var circle_marker_551db803ad4b2c0516cc261c2ea315a5 = L.circleMarker(
+                [40.644979064974535, -111.28100289842129],
+                {"bubblingMouseEvents": true, "color": "#48C9B0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48C9B0", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_8ae3bf1b01bb772df5ae83066214e626 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2cdec537e54d59d78b89a5e804bfe62d = $(`<div id="html_2cdec537e54d59d78b89a5e804bfe62d" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve walkable city centers<br>     <b>ID:</b> 51<br>     <b>Comments:</b> Stop building long main streets. grow deep. look at Corvallis Oregon excellent historic walkable downtown.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_8ae3bf1b01bb772df5ae83066214e626.setContent(html_2cdec537e54d59d78b89a5e804bfe62d);
+            
+        
+
+        circle_marker_551db803ad4b2c0516cc261c2ea315a5.bindPopup(popup_8ae3bf1b01bb772df5ae83066214e626)
+        ;
+
+        
+    
+    
+            var circle_marker_9ce07f679bb7cab2192e0c9b51377dce = L.circleMarker(
+                [40.64370070855744, -111.28089024555507],
+                {"bubblingMouseEvents": true, "color": "#00008B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00008B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_caa322bd7dd6841382f30c4c0784215b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d86c1498a72f0b835ab95926f4250150 = $(`<div id="html_d86c1498a72f0b835ab95926f4250150" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> more commercials/local commercials<br>     <b>ID:</b> 52<br>     <b>Comments:</b> More eating establishments. independent. not drains.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_caa322bd7dd6841382f30c4c0784215b.setContent(html_d86c1498a72f0b835ab95926f4250150);
+            
+        
+
+        circle_marker_9ce07f679bb7cab2192e0c9b51377dce.bindPopup(popup_caa322bd7dd6841382f30c4c0784215b)
+        ;
+
+        
+    
+    
+            var circle_marker_f829be4893430918cedfe46ee0e0fc5c = L.circleMarker(
+                [40.64321419486597, -111.28085558712405],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E8449", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_8c95404d5ce90d10ae8081690986ec94 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_52963002478d8ccfd36b9d54d4fe0e5f = $(`<div id="html_52963002478d8ccfd36b9d54d4fe0e5f" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Improve Landscaping<br>     <b>ID:</b> 53<br>     <b>Comments:</b> Irrigation for planters.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_8c95404d5ce90d10ae8081690986ec94.setContent(html_52963002478d8ccfd36b9d54d4fe0e5f);
+            
+        
+
+        circle_marker_f829be4893430918cedfe46ee0e0fc5c.bindPopup(popup_8c95404d5ce90d10ae8081690986ec94)
+        ;
+
+        
+    
+    
+            var circle_marker_f08a3fc76a7f2775b414d445f7b9b6d2 = L.circleMarker(
+                [40.643201045798065, -111.28076027643878],
+                {"bubblingMouseEvents": true, "color": "#B7950B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B7950B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_1ffb2c42c5a77fff79b43edf32240e91 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f7b9dad67c3bfcde3e5742a43354ad8b = $(`<div id="html_f7b9dad67c3bfcde3e5742a43354ad8b" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> reduce parking<br>     <b>ID:</b> 54<br>     <b>Comments:</b> reduce on-street parking. widen sidewalk. do a shared downtown lot.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_1ffb2c42c5a77fff79b43edf32240e91.setContent(html_f7b9dad67c3bfcde3e5742a43354ad8b);
+            
+        
+
+        circle_marker_f08a3fc76a7f2775b414d445f7b9b6d2.bindPopup(popup_1ffb2c42c5a77fff79b43edf32240e91)
+        ;
+
+        
+    
+    
+            var circle_marker_75882b2751cab95a880d9a81df552ba5 = L.circleMarker(
+                [40.64299066035929, -111.28075161183104],
+                {"bubblingMouseEvents": true, "color": "#654321", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#654321", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_1ea0fad21e5608ece71a85938deb6080 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_c980d96636c8a2ad07afaed79b8f177c = $(`<div id="html_c980d96636c8a2ad07afaed79b8f177c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> proposing roundabout/bypass<br>     <b>ID:</b> 55<br>     <b>Comments:</b> Fill the empty storefronts with locally owned businesses.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_1ea0fad21e5608ece71a85938deb6080.setContent(html_c980d96636c8a2ad07afaed79b8f177c);
+            
+        
+
+        circle_marker_75882b2751cab95a880d9a81df552ba5.bindPopup(popup_1ea0fad21e5608ece71a85938deb6080)
+        ;
+
+        
+    
+    
+            var circle_marker_dd0fbb92fccb709c2a4d1cf039fdf33f = L.circleMarker(
+                [40.64273430169528, -111.28085559178244],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_440ed421f52fd63096fa0bb9dedce412 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_98637d409bb0dc6b1a6449a03021f3e8 = $(`<div id="html_98637d409bb0dc6b1a6449a03021f3e8" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 56<br>     <b>Comments:</b> Safer pedestrian crossing with lights.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_440ed421f52fd63096fa0bb9dedce412.setContent(html_98637d409bb0dc6b1a6449a03021f3e8);
+            
+        
+
+        circle_marker_dd0fbb92fccb709c2a4d1cf039fdf33f.bindPopup(popup_440ed421f52fd63096fa0bb9dedce412)
+        ;
+
+        
+    
+    
+            var circle_marker_15416d50f347e483ad3b56ccb0433350 = L.circleMarker(
+                [40.641550548570386, -111.28076025547604],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_abe9a456b9b0ee432f17bba84bc4c486 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5b8afc35ffbb59a5eb2f637a55d49c67 = $(`<div id="html_5b8afc35ffbb59a5eb2f637a55d49c67" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 57<br>     <b>Comments:</b> reduce speed. change parking. safer pedestrian crossing.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_abe9a456b9b0ee432f17bba84bc4c486.setContent(html_5b8afc35ffbb59a5eb2f637a55d49c67);
+            
+        
+
+        circle_marker_15416d50f347e483ad3b56ccb0433350.bindPopup(popup_abe9a456b9b0ee432f17bba84bc4c486)
+        ;
+
+        
+    
+    
+            var circle_marker_f5706f4fbbdf4cfe716cc84934b9de76 = L.circleMarker(
+                [40.64070875579831, -111.28083825790856],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_63b72e7c16877ff8751ccab707ecedc8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_93cb24070d3a2afabdff8f5f83fa581c = $(`<div id="html_93cb24070d3a2afabdff8f5f83fa581c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 58<br>     <b>Comments:</b> need a pedestrian crossing.<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_63b72e7c16877ff8751ccab707ecedc8.setContent(html_93cb24070d3a2afabdff8f5f83fa581c);
+            
+        
+
+        circle_marker_f5706f4fbbdf4cfe716cc84934b9de76.bindPopup(popup_63b72e7c16877ff8751ccab707ecedc8)
+        ;
+
+        
+    
+    
+            var circle_marker_ec6218d5a2ce6df07c3e6c87f16a37b0 = L.circleMarker(
+                [40.63968938315256, -111.28080359016077],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_86502d5a8079d1d07428950c1a3bc7fe = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a4509769d4725f37b9583f1cb00e0f67 = $(`<div id="html_a4509769d4725f37b9583f1cb00e0f67" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 59<br>     <b>Comments:</b> decrease speed limit so people can cross the street safely, especially kids.<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_86502d5a8079d1d07428950c1a3bc7fe.setContent(html_a4509769d4725f37b9583f1cb00e0f67);
+            
+        
+
+        circle_marker_ec6218d5a2ce6df07c3e6c87f16a37b0.bindPopup(popup_86502d5a8079d1d07428950c1a3bc7fe)
+        ;
+
+        
+    
+    
+            var circle_marker_4548b76eb93f6b5fe7d3e6c1760723c4 = L.circleMarker(
+                [40.6381898905837, -111.2792782092581],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f38219b0fcc31e1aed41d5ace521533e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_04c00efdd5df132c39cb7719c6f326d6 = $(`<div id="html_04c00efdd5df132c39cb7719c6f326d6" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 60<br>     <b>Comments:</b> safe path to schools.<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_f38219b0fcc31e1aed41d5ace521533e.setContent(html_04c00efdd5df132c39cb7719c6f326d6);
+            
+        
+
+        circle_marker_4548b76eb93f6b5fe7d3e6c1760723c4.bindPopup(popup_f38219b0fcc31e1aed41d5ace521533e)
+        ;
+
+        
+    
+    
+            var circle_marker_46129a36dfa6dfb94730d67982bbc99a = L.circleMarker(
+                [40.636342886446116, -111.28024376814464],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_88fddf9336a203b36b318c6dd8f58676 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e2f137bcde43f698677bc1ff8f0678c4 = $(`<div id="html_e2f137bcde43f698677bc1ff8f0678c4" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 61<br>     <b>Comments:</b> put into practice dark sky roles.<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_88fddf9336a203b36b318c6dd8f58676.setContent(html_e2f137bcde43f698677bc1ff8f0678c4);
+            
+        
+
+        circle_marker_46129a36dfa6dfb94730d67982bbc99a.bindPopup(popup_88fddf9336a203b36b318c6dd8f58676)
+        ;
+
+        
+    
+    
+            var circle_marker_2b49b7451faa3acc50bf15c7a9cc286b = L.circleMarker(
+                [40.63664386802609, -111.2809894232903],
+                {"bubblingMouseEvents": true, "color": "#654321", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#654321", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_985bbb8073ee4cf2bf5228b28683a693 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_85595f86868e5ab7e6516310c3c85e62 = $(`<div id="html_85595f86868e5ab7e6516310c3c85e62" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> proposing roundabout/bypass<br>     <b>ID:</b> 62<br>     <b>Comments:</b> by-passes can be efficient, but need future vision of planning.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_985bbb8073ee4cf2bf5228b28683a693.setContent(html_85595f86868e5ab7e6516310c3c85e62);
+            
+        
+
+        circle_marker_2b49b7451faa3acc50bf15c7a9cc286b.bindPopup(popup_985bbb8073ee4cf2bf5228b28683a693)
+        ;
+
+        
+    
+    
+            var circle_marker_9d2cfe065c6b34852eb6c422cee1dc26 = L.circleMarker(
+                [40.64873016677897, -111.28081490825622],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_8ecb7c3ffdfd1018011a0254d80791ee = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_19270dfb1b8987e64be6f5cc34207af4 = $(`<div id="html_19270dfb1b8987e64be6f5cc34207af4" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 63<br>     <b>Comments:</b> crossing to canal from east to west.<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_8ecb7c3ffdfd1018011a0254d80791ee.setContent(html_19270dfb1b8987e64be6f5cc34207af4);
+            
+        
+
+        circle_marker_9d2cfe065c6b34852eb6c422cee1dc26.bindPopup(popup_8ecb7c3ffdfd1018011a0254d80791ee)
+        ;
+
+        
+    
+    
+            var circle_marker_abe22d92547f20059a7cb1b8bf2b6b3a = L.circleMarker(
+                [40.6433854997948, -111.28600276426955],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_c424520c0b78658c8693458d22214db0 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d9d6612aa588c466f4732b85044dc18b = $(`<div id="html_d9d6612aa588c466f4732b85044dc18b" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 64<br>     <b>Comments:</b> need trail on Valley Canal.<br>     <b>Likes:</b> 4<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_c424520c0b78658c8693458d22214db0.setContent(html_d9d6612aa588c466f4732b85044dc18b);
+            
+        
+
+        circle_marker_abe22d92547f20059a7cb1b8bf2b6b3a.bindPopup(popup_c424520c0b78658c8693458d22214db0)
+        ;
+
+        
+    
+    
+            var circle_marker_e9c52e4234632995f63c04b9014ddda8 = L.circleMarker(
+                [40.60672858397434, -111.27643730606603],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_6466e4f5aee2c7effed23064cea5cc3b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_3c633dacc4b5ee3ac8317e9e1eecf75f = $(`<div id="html_3c633dacc4b5ee3ac8317e9e1eecf75f" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 65<br>     <b>Comments:</b> put into place dark sky rules<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_6466e4f5aee2c7effed23064cea5cc3b.setContent(html_3c633dacc4b5ee3ac8317e9e1eecf75f);
+            
+        
+
+        circle_marker_e9c52e4234632995f63c04b9014ddda8.bindPopup(popup_6466e4f5aee2c7effed23064cea5cc3b)
+        ;
+
+        
+    
+    
+            var circle_marker_df35b773265a9929af751c3f61c04cae = L.circleMarker(
+                [40.608435064919995, -111.27989121125238],
+                {"bubblingMouseEvents": true, "color": "#800080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_ac6c140483a64d453f6a576c3c4d3f6a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e68d6f0d93ecad19ed1a18785ba60cac = $(`<div id="html_e68d6f0d93ecad19ed1a18785ba60cac" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Limit the developments<br>     <b>ID:</b> 66<br>     <b>Comments:</b> no hotels<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_ac6c140483a64d453f6a576c3c4d3f6a.setContent(html_e68d6f0d93ecad19ed1a18785ba60cac);
+            
+        
+
+        circle_marker_df35b773265a9929af751c3f61c04cae.bindPopup(popup_ac6c140483a64d453f6a576c3c4d3f6a)
+        ;
+
+        
+    
+    
+            var circle_marker_13a388443db021875c858319d5c432fc = L.circleMarker(
+                [40.6087264109705, -111.27950744400945],
+                {"bubblingMouseEvents": true, "color": "#00008B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00008B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_a54cfc78d5c19198f4d1cc090671e3b4 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8dfab0f32bdd40d42c6d6873ba587ffc = $(`<div id="html_8dfab0f32bdd40d42c6d6873ba587ffc" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> more commercials/local commercials<br>     <b>ID:</b> 67<br>     <b>Comments:</b> support a local hotel brand vs a big chain<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_a54cfc78d5c19198f4d1cc090671e3b4.setContent(html_8dfab0f32bdd40d42c6d6873ba587ffc);
+            
+        
+
+        circle_marker_13a388443db021875c858319d5c432fc.bindPopup(popup_a54cfc78d5c19198f4d1cc090671e3b4)
+        ;
+
+        
+    
+    
+            var circle_marker_fcb32c86939232ad61a77ec2b857ca9a = L.circleMarker(
+                [40.60978122912734, -111.28012592603936],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7264376d938e3ff6346f01e998d215da = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e9575c67a1b07a464b27692f52930c91 = $(`<div id="html_e9575c67a1b07a464b27692f52930c91" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 68<br>     <b>Comments:</b> X<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7264376d938e3ff6346f01e998d215da.setContent(html_e9575c67a1b07a464b27692f52930c91);
+            
+        
+
+        circle_marker_fcb32c86939232ad61a77ec2b857ca9a.bindPopup(popup_7264376d938e3ff6346f01e998d215da)
+        ;
+
+        
+    
+    
+            var circle_marker_603c5ab8e4dcde1e0a04943a21d73385 = L.circleMarker(
+                [40.60950029274925, -111.28094828441704],
+                {"bubblingMouseEvents": true, "color": "#654321", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#654321", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_39b223c9818f134436af50611bcefeae = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_6fa943eee2425ddcde48c8d3f3d56786 = $(`<div id="html_6fa943eee2425ddcde48c8d3f3d56786" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> proposing roundabout/bypass<br>     <b>ID:</b> 69<br>     <b>Comments:</b> roundabout<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_39b223c9818f134436af50611bcefeae.setContent(html_6fa943eee2425ddcde48c8d3f3d56786);
+            
+        
+
+        circle_marker_603c5ab8e4dcde1e0a04943a21d73385.bindPopup(popup_39b223c9818f134436af50611bcefeae)
+        ;
+
+        
+    
+    
+            var circle_marker_665dbbc5c0d4178522ed6bb8059d2372 = L.circleMarker(
+                [40.61085553975332, -111.28034179511346],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_9b22d55617402878806a382971c6ada9 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2f5ad45e628b839b81b50c872c3b928a = $(`<div id="html_2f5ad45e628b839b81b50c872c3b928a" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 70<br>     <b>Comments:</b> sidewalk, traffic calming<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_9b22d55617402878806a382971c6ada9.setContent(html_2f5ad45e628b839b81b50c872c3b928a);
+            
+        
+
+        circle_marker_665dbbc5c0d4178522ed6bb8059d2372.bindPopup(popup_9b22d55617402878806a382971c6ada9)
+        ;
+
+        
+    
+    
+            var circle_marker_fb62d9fac2d06265b4da23532bce3a4f = L.circleMarker(
+                [40.61224977670113, -111.28014991149199],
+                {"bubblingMouseEvents": true, "color": "#800080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_de8a5ade6d3f93c51173ecfd65ca85f4 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a612586bf19b75ff9809d093c6acbdb0 = $(`<div id="html_a612586bf19b75ff9809d093c6acbdb0" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Limit the developments<br>     <b>ID:</b> 71<br>     <b>Comments:</b> Limit new commercial size<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_de8a5ade6d3f93c51173ecfd65ca85f4.setContent(html_a612586bf19b75ff9809d093c6acbdb0);
+            
+        
+
+        circle_marker_fb62d9fac2d06265b4da23532bce3a4f.bindPopup(popup_de8a5ade6d3f93c51173ecfd65ca85f4)
+        ;
+
+        
+    
+    
+            var circle_marker_3a701c3626120e33bd6f7b888e04a7db = L.circleMarker(
+                [40.61172954243632, -111.28110932959932],
+                {"bubblingMouseEvents": true, "color": "#DC7633", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#DC7633", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_953d521a3b25257220e77559c002bdc0 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9a4b1705deef30c3f12d57ba56257519 = $(`<div id="html_9a4b1705deef30c3f12d57ba56257519" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> congestion problem<br>     <b>ID:</b> 72<br>     <b>Comments:</b> widen road - SR32 Francis 4-way to Kamas<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_953d521a3b25257220e77559c002bdc0.setContent(html_9a4b1705deef30c3f12d57ba56257519);
+            
+        
+
+        circle_marker_3a701c3626120e33bd6f7b888e04a7db.bindPopup(popup_953d521a3b25257220e77559c002bdc0)
+        ;
+
+        
+    
+    
+            var circle_marker_78f00b7c7ad3973c9980c43edb43a9b8 = L.circleMarker(
+                [40.6150173548983, -111.28053367873491],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_cfb56b480d57897047de98b0bcb310d7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4745833ea19ecac510a4cd49defea236 = $(`<div id="html_4745833ea19ecac510a4cd49defea236" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 73<br>     <b>Comments:</b> do poeple have an easement for access besides the driveways.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_cfb56b480d57897047de98b0bcb310d7.setContent(html_4745833ea19ecac510a4cd49defea236);
+            
+        
+
+        circle_marker_78f00b7c7ad3973c9980c43edb43a9b8.bindPopup(popup_cfb56b480d57897047de98b0bcb310d7)
+        ;
+
+        
+    
+    
+            var circle_marker_01b15c088ae2999e0516dadc38e9ea16 = L.circleMarker(
+                [40.61587049498548, -111.28053367873491],
+                {"bubblingMouseEvents": true, "color": "#654321", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#654321", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_e4acf65d148511dfa531be8373b513eb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f1ac5516f014361efab17a8d1572d063 = $(`<div id="html_f1ac5516f014361efab17a8d1572d063" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> proposing roundabout/bypass<br>     <b>ID:</b> 74<br>     <b>Comments:</b> roundabout<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_e4acf65d148511dfa531be8373b513eb.setContent(html_f1ac5516f014361efab17a8d1572d063);
+            
+        
+
+        circle_marker_01b15c088ae2999e0516dadc38e9ea16.bindPopup(popup_e4acf65d148511dfa531be8373b513eb)
+        ;
+
+        
+    
+    
+            var circle_marker_4a82d841689d39f40dfc977a505441ca = L.circleMarker(
+                [40.616952510645255, -111.28165756851776],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f75eb6916bed05ea6e30025c4ca2a544 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b03d1ddae1faf05b29c1ff27ad6a1ae8 = $(`<div id="html_b03d1ddae1faf05b29c1ff27ad6a1ae8" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 75<br>     <b>Comments:</b> Lambert<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 4     </div>`)[0];
+                popup_f75eb6916bed05ea6e30025c4ca2a544.setContent(html_b03d1ddae1faf05b29c1ff27ad6a1ae8);
+            
+        
+
+        circle_marker_4a82d841689d39f40dfc977a505441ca.bindPopup(popup_f75eb6916bed05ea6e30025c4ca2a544)
+        ;
+
+        
+    
+    
+            var circle_marker_e86995fb0249c54c068f78cb6b3a56dc = L.circleMarker(
+                [40.6171605885708, -111.28121897738299],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_27565c5c0524603607d5437a7aa135de = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d09367cb6ff58f48c998336bfc64863a = $(`<div id="html_d09367cb6ff58f48c998336bfc64863a" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 76<br>     <b>Comments:</b> enforce speed limit<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_27565c5c0524603607d5437a7aa135de.setContent(html_d09367cb6ff58f48c998336bfc64863a);
+            
+        
+
+        circle_marker_e86995fb0249c54c068f78cb6b3a56dc.bindPopup(popup_27565c5c0524603607d5437a7aa135de)
+        ;
+
+        
+    
+    
+            var circle_marker_6d171b106f16f8d91dde7914efe430cc = L.circleMarker(
+                [40.616640392541804, -111.28124638932893],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f47a659ac6ce39c6995f5480206673cc = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e73ba08be06458b68e359db0027352f0 = $(`<div id="html_e73ba08be06458b68e359db0027352f0" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 77<br>     <b>Comments:</b> major speeding<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_f47a659ac6ce39c6995f5480206673cc.setContent(html_e73ba08be06458b68e359db0027352f0);
+            
+        
+
+        circle_marker_6d171b106f16f8d91dde7914efe430cc.bindPopup(popup_f47a659ac6ce39c6995f5480206673cc)
+        ;
+
+        
+    
+    
+            var circle_marker_39c6f5586617fb4c72cdc2cea5cc57f2 = L.circleMarker(
+                [40.61758194438509, -111.28205504173363],
+                {"bubblingMouseEvents": true, "color": "#654321", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#654321", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7374a19b73ebc6970b8083211399b172 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_32aa156379f80d2c81a7ba45e3d24e4c = $(`<div id="html_32aa156379f80d2c81a7ba45e3d24e4c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> proposing roundabout/bypass<br>     <b>ID:</b> 78<br>     <b>Comments:</b> Hallam connection as a bypass from Highway 35 to Highway 248<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7374a19b73ebc6970b8083211399b172.setContent(html_32aa156379f80d2c81a7ba45e3d24e4c);
+            
+        
+
+        circle_marker_39c6f5586617fb4c72cdc2cea5cc57f2.bindPopup(popup_7374a19b73ebc6970b8083211399b172)
+        ;
+
+        
+    
+    
+            var circle_marker_a876e1fb3a3f68b4b0a95317b07d84f2 = L.circleMarker(
+                [40.620453335465385, -111.27999914578942],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_0cff6d10774a58c7a426031dbc48907f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_28d525d630882632959b244770b041d8 = $(`<div id="html_28d525d630882632959b244770b041d8" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> safety issue<br>     <b>ID:</b> 79<br>     <b>Comments:</b> Safety: I have almost been hit multiple times from behind while turning into my property. A turn lane is an option.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_0cff6d10774a58c7a426031dbc48907f.setContent(html_28d525d630882632959b244770b041d8);
+            
+        
+
+        circle_marker_a876e1fb3a3f68b4b0a95317b07d84f2.bindPopup(popup_0cff6d10774a58c7a426031dbc48907f)
+        ;
+
+        
+    
+    
+            var circle_marker_1c322db00c35d506e80f026e28d6fcd8 = L.circleMarker(
+                [40.61022604264388, -111.28023900031621],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7fa89db409262075062856e2858fbded = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d386de25af2f2b5bf7381bcea2b88696 = $(`<div id="html_d386de25af2f2b5bf7381bcea2b88696" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 80<br>     <b>Comments:</b> speeding<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7fa89db409262075062856e2858fbded.setContent(html_d386de25af2f2b5bf7381bcea2b88696);
+            
+        
+
+        circle_marker_1c322db00c35d506e80f026e28d6fcd8.bindPopup(popup_7fa89db409262075062856e2858fbded)
+        ;
+
+        
+    
+    
+            var circle_marker_cecc30f281851e168bbbc9586ac1aa6a = L.circleMarker(
+                [40.610475761215085, -111.28065703249153],
+                {"bubblingMouseEvents": true, "color": "#DC7633", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#DC7633", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_613267c4ea4cb4f285727ccde611736a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5eec61fab1d14553507dc22449837efd = $(`<div id="html_5eec61fab1d14553507dc22449837efd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> congestion problem<br>     <b>ID:</b> 81<br>     <b>Comments:</b> Major bottleneck in summer<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_613267c4ea4cb4f285727ccde611736a.setContent(html_5eec61fab1d14553507dc22449837efd);
+            
+        
+
+        circle_marker_cecc30f281851e168bbbc9586ac1aa6a.bindPopup(popup_613267c4ea4cb4f285727ccde611736a)
+        ;
+
+        
+    
+    
+            var circle_marker_70307f7ae8f0ce81f51bcb740547810c = L.circleMarker(
+                [40.617933072200444, -111.28055937743427],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_a1d8a9e88aad900e9f81295b7f1c1e44 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_42d98cde0aaadb767928e73c33e080e2 = $(`<div id="html_42d98cde0aaadb767928e73c33e080e2" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 82<br>     <b>Comments:</b> speeding<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_a1d8a9e88aad900e9f81295b7f1c1e44.setContent(html_42d98cde0aaadb767928e73c33e080e2);
+            
+        
+
+        circle_marker_70307f7ae8f0ce81f51bcb740547810c.bindPopup(popup_a1d8a9e88aad900e9f81295b7f1c1e44)
+        ;
+
+        
+    
+    
+            var circle_marker_99d2079c40c910504e4571fd8c917510 = L.circleMarker(
+                [40.638009310934905, -111.28086090883946],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E8449", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f44e7731602d754455aac96fd103a5bf = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_12b24fc842ebd88a94cc2cb25761c4f4 = $(`<div id="html_12b24fc842ebd88a94cc2cb25761c4f4" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Improve Landscaping<br>     <b>ID:</b> 83<br>     <b>Comments:</b> add in irrigation for main street beautification<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_f44e7731602d754455aac96fd103a5bf.setContent(html_12b24fc842ebd88a94cc2cb25761c4f4);
+            
+        
+
+        circle_marker_99d2079c40c910504e4571fd8c917510.bindPopup(popup_f44e7731602d754455aac96fd103a5bf)
+        ;
+
+        
+    
+    
+            var circle_marker_9fd8fb3f88c464fa88051aeb12fb7f5b = L.circleMarker(
+                [40.64212783440891, -111.28064161327207],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_dcfc669eeff6e5725f532859e723c103 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_129eb8f451460fe4e8a49ba7854cf131 = $(`<div id="html_129eb8f451460fe4e8a49ba7854cf131" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 84<br>     <b>Comments:</b> need more pedestrian crossing<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_dcfc669eeff6e5725f532859e723c103.setContent(html_129eb8f451460fe4e8a49ba7854cf131);
+            
+        
+
+        circle_marker_9fd8fb3f88c464fa88051aeb12fb7f5b.bindPopup(popup_dcfc669eeff6e5725f532859e723c103)
+        ;
+
+        
+    
+    
+            var circle_marker_a68e10c8075216d441987f3291d2a593 = L.circleMarker(
+                [40.642710231362194, -111.28135432386608],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_9714bef5747b44eeb56159dd267e3f90 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e46fb3012281ab360bf5abf084de2dfd = $(`<div id="html_e46fb3012281ab360bf5abf084de2dfd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 85<br>     <b>Comments:</b> need more police for speeding<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_9714bef5747b44eeb56159dd267e3f90.setContent(html_e46fb3012281ab360bf5abf084de2dfd);
+            
+        
+
+        circle_marker_a68e10c8075216d441987f3291d2a593.bindPopup(popup_9714bef5747b44eeb56159dd267e3f90)
+        ;
+
+        
+    
+    
+            var circle_marker_50cb96a4ad41b9b3f30f37d2a32735f4 = L.circleMarker(
+                [40.63572113254186, -111.26079536442299],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_c1280d1e44936979f497e7dcd8195c57 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ca31ee1d615d878f5dc5bf218456739f = $(`<div id="html_ca31ee1d615d878f5dc5bf218456739f" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 86<br>     <b>Comments:</b> trail to (path) Slate Creer Samak<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_c1280d1e44936979f497e7dcd8195c57.setContent(html_ca31ee1d615d878f5dc5bf218456739f);
+            
+        
+
+        circle_marker_50cb96a4ad41b9b3f30f37d2a32735f4.bindPopup(popup_c1280d1e44936979f497e7dcd8195c57)
+        ;
+
+        
+    
+    
+            var circle_marker_fa5cea504f7f1452918d98b81869db8f = L.circleMarker(
+                [40.644540588704515, -111.2818477388927],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_92f99b4cc44d43b8c6d2214bad3e3a79 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_7ffedb3faf0999b4aa3a8cb4f1a2cbfc = $(`<div id="html_7ffedb3faf0999b4aa3a8cb4f1a2cbfc" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 87<br>     <b>Comments:</b> slow down speed on main street Kamas<br>     <b>Likes:</b> 6<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_92f99b4cc44d43b8c6d2214bad3e3a79.setContent(html_7ffedb3faf0999b4aa3a8cb4f1a2cbfc);
+            
+        
+
+        circle_marker_fa5cea504f7f1452918d98b81869db8f.bindPopup(popup_92f99b4cc44d43b8c6d2214bad3e3a79)
+        ;
+
+        
+    
+    
+            var circle_marker_60fcc5b223d0a3aba4c383b63e9b24d4 = L.circleMarker(
+                [40.65485620949962, -111.28129949997421],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_bc86633f141fa9b961a6822e8c9d0c66 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5925f1c07df755dc425b08da9e03a0b1 = $(`<div id="html_5925f1c07df755dc425b08da9e03a0b1" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 88<br>     <b>Comments:</b> connect the bike path to Kamas<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_bc86633f141fa9b961a6822e8c9d0c66.setContent(html_5925f1c07df755dc425b08da9e03a0b1);
+            
+        
+
+        circle_marker_60fcc5b223d0a3aba4c383b63e9b24d4.bindPopup(popup_bc86633f141fa9b961a6822e8c9d0c66)
+        ;
+
+        
+    
+    
+            var circle_marker_5e82411c018828b18f1a581d832a16c6 = L.circleMarker(
+                [40.65602077617866, -111.28305386451336],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_dcf91b0353874653279e68c2a5e920c7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9667829b31c8eb14947a0ee7a5accd44 = $(`<div id="html_9667829b31c8eb14947a0ee7a5accd44" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 89<br>     <b>Comments:</b> Stoked for the "cidert"<br>     <b>Likes:</b> 4<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_dcf91b0353874653279e68c2a5e920c7.setContent(html_9667829b31c8eb14947a0ee7a5accd44);
+            
+        
+
+        circle_marker_5e82411c018828b18f1a581d832a16c6.bindPopup(popup_dcf91b0353874653279e68c2a5e920c7)
+        ;
+
+        
+    
+    
+            var circle_marker_f111a3237493812ecca4ddfe33987fee = L.circleMarker(
+                [40.65718532252985, -111.28097055662313],
+                {"bubblingMouseEvents": true, "color": "#145A32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#145A32", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_a09069ad3a47affa7e8c59e1e7d87995 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_6fb3c4242dbad4f5efcf8d7b777ad410 = $(`<div id="html_6fb3c4242dbad4f5efcf8d7b777ad410" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> finish the SR32 trail<br>     <b>ID:</b> 90<br>     <b>Comments:</b> finish the bike lane<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_a09069ad3a47affa7e8c59e1e7d87995.setContent(html_6fb3c4242dbad4f5efcf8d7b777ad410);
+            
+        
+
+        circle_marker_f111a3237493812ecca4ddfe33987fee.bindPopup(popup_a09069ad3a47affa7e8c59e1e7d87995)
+        ;
+
+        
+    
+    
+            var circle_marker_00ae20a5a73319864497eae6b3d73225 = L.circleMarker(
+                [40.65909846169072, -111.28020302213723],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_5745933a75d3f73d7c6044e73cbd014c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9a8e4310b824555dfd7b99991f47f71d = $(`<div id="html_9a8e4310b824555dfd7b99991f47f71d" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 91<br>     <b>Comments:</b> reduce speed limit<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_5745933a75d3f73d7c6044e73cbd014c.setContent(html_9a8e4310b824555dfd7b99991f47f71d);
+            
+        
+
+        circle_marker_00ae20a5a73319864497eae6b3d73225.bindPopup(popup_5745933a75d3f73d7c6044e73cbd014c)
+        ;
+
+        
+    
+    
+            var circle_marker_9453a7ee5df73444ac3bfcf65c5b7272 = L.circleMarker(
+                [40.66349639421377, -111.28054567146128],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_65be3061410496556e15a443d80146ca = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d992efdf95218a54d2063094a40465fa = $(`<div id="html_d992efdf95218a54d2063094a40465fa" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 92<br>     <b>Comments:</b> lower speed limit from 50 mph to 35/40 mph<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_65be3061410496556e15a443d80146ca.setContent(html_d992efdf95218a54d2063094a40465fa);
+            
+        
+
+        circle_marker_9453a7ee5df73444ac3bfcf65c5b7272.bindPopup(popup_65be3061410496556e15a443d80146ca)
+        ;
+
+        
+    
+    
+            var circle_marker_d4b2682acd73dcbaa484338a6b62bb15 = L.circleMarker(
+                [40.66083479593325, -111.2801070803265],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_d87855a11f4e72caa9815f1cd5417fc8 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_03d131bcf42b1a7b4044f270f9114fe8 = $(`<div id="html_03d131bcf42b1a7b4044f270f9114fe8" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 93<br>     <b>Comments:</b> wet lands!<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_d87855a11f4e72caa9815f1cd5417fc8.setContent(html_03d131bcf42b1a7b4044f270f9114fe8);
+            
+        
+
+        circle_marker_d4b2682acd73dcbaa484338a6b62bb15.bindPopup(popup_d87855a11f4e72caa9815f1cd5417fc8)
+        ;
+
+        
+    
+    
+            var circle_marker_52cc05c395a160348d5be13c71c6ef39 = L.circleMarker(
+                [40.66615788628751, -111.28032637589388],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_4f5b6ab6bcb2557e51f252a489176b0e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_1d05692eff7f761a3ee12ff119e73816 = $(`<div id="html_1d05692eff7f761a3ee12ff119e73816" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 94<br>     <b>Comments:</b> move trail on other side of SR32 before Kamas<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_4f5b6ab6bcb2557e51f252a489176b0e.setContent(html_1d05692eff7f761a3ee12ff119e73816);
+            
+        
+
+        circle_marker_52cc05c395a160348d5be13c71c6ef39.bindPopup(popup_4f5b6ab6bcb2557e51f252a489176b0e)
+        ;
+
+        
+    
+    
+            var circle_marker_d5756a652fd3c64791b552620940ff79 = L.circleMarker(
+                [40.65118561187838, -111.28054567146128],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_9394746d6e630e724f714a963a6f4150 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_72acff84ccf9ae32ea3eb6aceb52db75 = $(`<div id="html_72acff84ccf9ae32ea3eb6aceb52db75" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 95<br>     <b>Comments:</b> do not widen SR32<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_9394746d6e630e724f714a963a6f4150.setContent(html_72acff84ccf9ae32ea3eb6aceb52db75);
+            
+        
+
+        circle_marker_d5756a652fd3c64791b552620940ff79.bindPopup(popup_9394746d6e630e724f714a963a6f4150)
+        ;
+
+        
+    
+    
+            var circle_marker_3afc7bd40514fb7cccaec2e546265ae0 = L.circleMarker(
+                [40.653015736783075, -111.28076496702866],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_4a43c728f4dbc2ae649c866cf090e742 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_65387490b650e02c3b3e733b941328a9 = $(`<div id="html_65387490b650e02c3b3e733b941328a9" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> safety issue<br>     <b>ID:</b> 96<br>     <b>Comments:</b> SR 32 is not a safe place for the bike path<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_4a43c728f4dbc2ae649c866cf090e742.setContent(html_65387490b650e02c3b3e733b941328a9);
+            
+        
+
+        circle_marker_3afc7bd40514fb7cccaec2e546265ae0.bindPopup(popup_4a43c728f4dbc2ae649c866cf090e742)
+        ;
+
+        
+    
+    
+            var circle_marker_1187111f5aab1601660d69f5ba66b00d = L.circleMarker(
+                [40.678964831401565, -111.29589636117876],
+                {"bubblingMouseEvents": true, "color": "#E5E4E2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E5E4E2", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_38cd3bff2bdde491657a789c579f20f2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e4a107434b6b697220a94e9a82571371 = $(`<div id="html_e4a107434b6b697220a94e9a82571371" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> alternative SR32 route<br>     <b>ID:</b> 97<br>     <b>Comments:</b> move trails here! too busy for SR32!<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_38cd3bff2bdde491657a789c579f20f2.setContent(html_e4a107434b6b697220a94e9a82571371);
+            
+        
+
+        circle_marker_1187111f5aab1601660d69f5ba66b00d.bindPopup(popup_38cd3bff2bdde491657a789c579f20f2)
+        ;
+
+        
+    
+    
+            var circle_marker_9ad7525cb2ecdcee14458802ca3421c2 = L.circleMarker(
+                [40.687944857870775, -111.29611565674618],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_6087ee45772454eeebe65bf993ffb177 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_005aeb800217b9a050a10f6b048c291b = $(`<div id="html_005aeb800217b9a050a10f6b048c291b" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 98<br>     <b>Comments:</b> protect bike corridor<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_6087ee45772454eeebe65bf993ffb177.setContent(html_005aeb800217b9a050a10f6b048c291b);
+            
+        
+
+        circle_marker_9ad7525cb2ecdcee14458802ca3421c2.bindPopup(popup_6087ee45772454eeebe65bf993ffb177)
+        ;
+
+        
+    
+    
+            var circle_marker_b8727f7424529f80c2ee13660b4b6412 = L.circleMarker(
+                [40.677135418420235, -111.28471228724175],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_5c17e5e5a9fe8368b992602fb59f88d1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_77d0efac1f449984e106cdbed80edefc = $(`<div id="html_77d0efac1f449984e106cdbed80edefc" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> safety issue<br>     <b>ID:</b> 99<br>     <b>Comments:</b> fine bicycle riders when not using path from Marion to Oakley<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_5c17e5e5a9fe8368b992602fb59f88d1.setContent(html_77d0efac1f449984e106cdbed80edefc);
+            
+        
+
+        circle_marker_b8727f7424529f80c2ee13660b4b6412.bindPopup(popup_5c17e5e5a9fe8368b992602fb59f88d1)
+        ;
+
+        
+    
+    
+            var circle_marker_7bdc0d1143542e465cea5babbfdd975d = L.circleMarker(
+                [40.67630385046905, -111.28449299167434],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_3a5916d525b121481fe81245b1dc5a2e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_553b40c0da0cae21df1b4ed1502a9c08 = $(`<div id="html_553b40c0da0cae21df1b4ed1502a9c08" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 100<br>     <b>Comments:</b> People need to stop parking on the trail.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_3a5916d525b121481fe81245b1dc5a2e.setContent(html_553b40c0da0cae21df1b4ed1502a9c08);
+            
+        
+
+        circle_marker_7bdc0d1143542e465cea5babbfdd975d.bindPopup(popup_3a5916d525b121481fe81245b1dc5a2e)
+        ;
+
+        
+    
+    
+            var circle_marker_47cd5fa3e1756ede0f9debb8c7442174 = L.circleMarker(
+                [40.68927512926271, -111.27001948422642],
+                {"bubblingMouseEvents": true, "color": "#DC7633", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#DC7633", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_2c099b2ed7ff3dfaec850944c0fb3b1c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_eb808b0647e3389b73a583f498fc75ad = $(`<div id="html_eb808b0647e3389b73a583f498fc75ad" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> congestion problem<br>     <b>ID:</b> 101<br>     <b>Comments:</b> traffic on Canal!<br>     <b>Likes:</b> 3<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_2c099b2ed7ff3dfaec850944c0fb3b1c.setContent(html_eb808b0647e3389b73a583f498fc75ad);
+            
+        
+
+        circle_marker_47cd5fa3e1756ede0f9debb8c7442174.bindPopup(popup_2c099b2ed7ff3dfaec850944c0fb3b1c)
+        ;
+
+        
+    
+    
+            var circle_marker_f19d511b2889326a667ffef2d1d75fb4 = L.circleMarker(
+                [40.70457134155854, -111.27352821330471],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_9d6119633089db6ff4eb2fd2546b14bb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_1c44dc6671467c1a7d2b47037e57d61c = $(`<div id="html_1c44dc6671467c1a7d2b47037e57d61c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 102<br>     <b>Comments:</b> put snow-plow friendly speed bumps! "Bonlderville"<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 1     </div>`)[0];
+                popup_9d6119633089db6ff4eb2fd2546b14bb.setContent(html_1c44dc6671467c1a7d2b47037e57d61c);
+            
+        
+
+        circle_marker_f19d511b2889326a667ffef2d1d75fb4.bindPopup(popup_9d6119633089db6ff4eb2fd2546b14bb)
+        ;
+
+        
+    
+    
+            var circle_marker_08984f8f63983a5eb49e7cd083170722 = L.circleMarker(
+                [40.695926087888694, -111.29721213458313],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_585272e363c1e1562ce0501fb086a687 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_0bf7629dcd18450a5e6381bf5591c30e = $(`<div id="html_0bf7629dcd18450a5e6381bf5591c30e" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 103<br>     <b>Comments:</b> protect bike corridor<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_585272e363c1e1562ce0501fb086a687.setContent(html_0bf7629dcd18450a5e6381bf5591c30e);
+            
+        
+
+        circle_marker_08984f8f63983a5eb49e7cd083170722.bindPopup(popup_585272e363c1e1562ce0501fb086a687)
+        ;
+
+        
+    
+    
+            var circle_marker_297ee7fbb005d0f96c06a61a453a5a5b = L.circleMarker(
+                [40.70829094918638, -111.28087461481235],
+                {"bubblingMouseEvents": true, "color": "#E5E4E2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E5E4E2", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_3f911f4a1281be89151b097904260505 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b772c5ae4f8f432b1dc044fe13228c8a = $(`<div id="html_b772c5ae4f8f432b1dc044fe13228c8a" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> alternative SR32 route<br>     <b>ID:</b> 104<br>     <b>Comments:</b> make SR32 go straight onto new lane then turn onto N.Beneh RD to bypass Oakley<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 4     </div>`)[0];
+                popup_3f911f4a1281be89151b097904260505.setContent(html_b772c5ae4f8f432b1dc044fe13228c8a);
+            
+        
+
+        circle_marker_297ee7fbb005d0f96c06a61a453a5a5b.bindPopup(popup_3f911f4a1281be89151b097904260505)
+        ;
+
+        
+    
+    
+            var circle_marker_1486a623757b1c4ebdde241d30a5a75a = L.circleMarker(
+                [40.70712729538731, -111.28854995967109],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_aec3f3aeeeeac8b86ecb040d3db6314d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_50f7799e3d0a04c2d2064d097562effd = $(`<div id="html_50f7799e3d0a04c2d2064d097562effd" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 105<br>     <b>Comments:</b> drop speed limit<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_aec3f3aeeeeac8b86ecb040d3db6314d.setContent(html_50f7799e3d0a04c2d2064d097562effd);
+            
+        
+
+        circle_marker_1486a623757b1c4ebdde241d30a5a75a.bindPopup(popup_aec3f3aeeeeac8b86ecb040d3db6314d)
+        ;
+
+        
+    
+    
+            var circle_marker_9f3c1d5262931141b62a041a17e1d8f6 = L.circleMarker(
+                [40.71277913765384, -111.29918579468965],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_988cd65a8fb76320d222755fd0a95cc1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_3445c5bd354b30aed5861c2a06631ddf = $(`<div id="html_3445c5bd354b30aed5861c2a06631ddf" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 106<br>     <b>Comments:</b> safe crossing area<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 1     </div>`)[0];
+                popup_988cd65a8fb76320d222755fd0a95cc1.setContent(html_3445c5bd354b30aed5861c2a06631ddf);
+            
+        
+
+        circle_marker_9f3c1d5262931141b62a041a17e1d8f6.bindPopup(popup_988cd65a8fb76320d222755fd0a95cc1)
+        ;
+
+        
+    
+    
+            var circle_marker_1dcacd7865fd256b00ee79c8f6f9f0c7 = L.circleMarker(
+                [40.7257433160864, -111.3072997306832],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_62ca69baf8afd8feede52b92bced63f5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_47eb7abbbca71910eba6eae1aa889cde = $(`<div id="html_47eb7abbbca71910eba6eae1aa889cde" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 107<br>     <b>Comments:</b> maintain dark sky<br>     <b>Likes:</b> 2<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_62ca69baf8afd8feede52b92bced63f5.setContent(html_47eb7abbbca71910eba6eae1aa889cde);
+            
+        
+
+        circle_marker_1dcacd7865fd256b00ee79c8f6f9f0c7.bindPopup(popup_62ca69baf8afd8feede52b92bced63f5)
+        ;
+
+        
+    
+    
+            var circle_marker_9100f0ac15d9effcb55d630a8fed26e8 = L.circleMarker(
+                [40.723001104283966, -111.31629084894628],
+                {"bubblingMouseEvents": true, "color": "#3498DB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3498DB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_fd9cfe1c9614c92e3e9d9f1504241893 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_213ef5b2613696aaa59a537c6875d046 = $(`<div id="html_213ef5b2613696aaa59a537c6875d046" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> preserve rural character/farm lands/corridor view/dark sky/wildlife<br>     <b>ID:</b> 108<br>     <b>Comments:</b> The Hollow would be an excellent open space corridor. Trade to more density to Peoa corner.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_fd9cfe1c9614c92e3e9d9f1504241893.setContent(html_213ef5b2613696aaa59a537c6875d046);
+            
+        
+
+        circle_marker_9100f0ac15d9effcb55d630a8fed26e8.bindPopup(popup_fd9cfe1c9614c92e3e9d9f1504241893)
+        ;
+
+        
+    
+    
+            var circle_marker_9d301484e72afa1ec24185b13c5a23b9 = L.circleMarker(
+                [40.72399828528473, -111.34118089584537],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_11332b4979e3e8323c2e095fdfc12197 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_4277365466b950ecee55a87601e3df0e = $(`<div id="html_4277365466b950ecee55a87601e3df0e" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> safety issue<br>     <b>ID:</b> 109<br>     <b>Comments:</b> Make turn in Peoa safer so people stop running into crashes on south or Williams because speed 20 mph.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_11332b4979e3e8323c2e095fdfc12197.setContent(html_4277365466b950ecee55a87601e3df0e);
+            
+        
+
+        circle_marker_9d301484e72afa1ec24185b13c5a23b9.bindPopup(popup_11332b4979e3e8323c2e095fdfc12197)
+        ;
+
+        
+    
+    
+            var circle_marker_21af501a3244e6ccc2c0903394cc61be = L.circleMarker(
+                [40.731310489448724, -111.3463343416791],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_ab9f75af6d4b64f592da87f2a0edfecd = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_16b5e25fb8dde2a0f22c5389fe74bd24 = $(`<div id="html_16b5e25fb8dde2a0f22c5389fe74bd24" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 110<br>     <b>Comments:</b> add bike path connectio to "Uanship"<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_ab9f75af6d4b64f592da87f2a0edfecd.setContent(html_16b5e25fb8dde2a0f22c5389fe74bd24);
+            
+        
+
+        circle_marker_21af501a3244e6ccc2c0903394cc61be.bindPopup(popup_ab9f75af6d4b64f592da87f2a0edfecd)
+        ;
+
+        
+    
+    
+            var circle_marker_933e0b9d9d0d7a072491c07d76d49fd2 = L.circleMarker(
+                [40.641888634188085, -111.26130248542255],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_2d190691feadfbfc29446a9c4b2d68ec = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b7cd130bfac5ba855542169272f19af9 = $(`<div id="html_b7cd130bfac5ba855542169272f19af9" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 111<br>     <b>Comments:</b> it would be cool to have bike stands along the trail. Maybe hitching posts for horses?<br>     <b>Likes:</b> 1<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_2d190691feadfbfc29446a9c4b2d68ec.setContent(html_b7cd130bfac5ba855542169272f19af9);
+            
+        
+
+        circle_marker_933e0b9d9d0d7a072491c07d76d49fd2.bindPopup(popup_2d190691feadfbfc29446a9c4b2d68ec)
+        ;
+
+        
+    
+    
+            var circle_marker_ee32afb01e3d3b1b4f7f9fda5e2fccb0 = L.circleMarker(
+                [40.63531549273403, -111.26426297558231],
+                {"bubblingMouseEvents": true, "color": "#654321", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#654321", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_e0d719c11f57d6e3cfc4669e4e8f21b2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_c40c52e0c2dd476a7b7b535a2e1277f6 = $(`<div id="html_c40c52e0c2dd476a7b7b535a2e1277f6" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> proposing roundabout/bypass<br>     <b>ID:</b> 112<br>     <b>Comments:</b> Is there any future possibility of the need for a city center bypass at any of the cities? Even "decades" down the road? The Ben Now Wishes Trail had such a plan.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_e0d719c11f57d6e3cfc4669e4e8f21b2.setContent(html_c40c52e0c2dd476a7b7b535a2e1277f6);
+            
+        
+
+        circle_marker_ee32afb01e3d3b1b4f7f9fda5e2fccb0.bindPopup(popup_e0d719c11f57d6e3cfc4669e4e8f21b2)
+        ;
+
+        
+    
+    
+            var circle_marker_32a134c7cca74b53b952b9e6b73bd648 = L.circleMarker(
+                [40.712833388235396, -111.30008397832735],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_7eecc0144274d777554582c5e4834ffe = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f66db11e3872e824730530c2d7799ba8 = $(`<div id="html_f66db11e3872e824730530c2d7799ba8" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 3301<br>     <b>Comments:</b> Excessive speed angular road access (Millrace) narrow cooridoor lack of pedestrian trail <br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_7eecc0144274d777554582c5e4834ffe.setContent(html_f66db11e3872e824730530c2d7799ba8);
+            
+        
+
+        circle_marker_32a134c7cca74b53b952b9e6b73bd648.bindPopup(popup_7eecc0144274d777554582c5e4834ffe)
+        ;
+
+        
+    
+    
+            var circle_marker_ea4b2419e8ba3638015befc20e84d530 = L.circleMarker(
+                [40.6770168565724, -111.2807944560414],
+                {"bubblingMouseEvents": true, "color": "#1ABC9C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ABC9C", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_008709b5617af16bf3c4f53547de0dcc = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b1a9b7706764e39a62ab52532da03b7f = $(`<div id="html_b1a9b7706764e39a62ab52532da03b7f" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve sidewalk/trails/biking facilities<br>     <b>ID:</b> 701<br>     <b>Comments:</b> Speeding is a BIG problem. Cars use the walking trail to pass. Has anyone considered somehow adding turns or curves on this stretch of highway to slow traffic? What will happen with the homes along SR32 if the road is widened?<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_008709b5617af16bf3c4f53547de0dcc.setContent(html_b1a9b7706764e39a62ab52532da03b7f);
+            
+        
+
+        circle_marker_ea4b2419e8ba3638015befc20e84d530.bindPopup(popup_008709b5617af16bf3c4f53547de0dcc)
+        ;
+
+        
+    
+    
+            var circle_marker_ecc18f3eb7894358c05d5d0b9f4282c1 = L.circleMarker(
+                [40.674865168865246, -111.28098759268508],
+                {"bubblingMouseEvents": true, "color": "#800080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_f631f8b1e04e29da84a23093143c8c00 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_58f174c53157f1598765e6a8e9d52e2c = $(`<div id="html_58f174c53157f1598765e6a8e9d52e2c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Limit the developments<br>     <b>ID:</b> 801<br>     <b>Comments:</b> Speeding is a big issue. Cars going north drive off the road almost onto the trail passing cars turning left going into the lower loop<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_f631f8b1e04e29da84a23093143c8c00.setContent(html_58f174c53157f1598765e6a8e9d52e2c);
+            
+        
+
+        circle_marker_ecc18f3eb7894358c05d5d0b9f4282c1.bindPopup(popup_f631f8b1e04e29da84a23093143c8c00)
+        ;
+
+        
+    
+    
+            var circle_marker_b5766752bfc7ff6cf8d1c41f869e9a08 = L.circleMarker(
+                [40.641108427462534, -111.28072452725662],
+                {"bubblingMouseEvents": true, "color": "#48C9B0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48C9B0", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_5b89dff93bef873cb124209e11ee0d58 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5e4a17ab16d1985b28c5e02720850d86 = $(`<div id="html_5e4a17ab16d1985b28c5e02720850d86" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve walkable city centers<br>     <b>ID:</b> 1901<br>     <b>Comments:</b> Redesign Kamas Commercial Main Street to include a bike pathway and narrow lanes so speed is decreased. I have witnessed so many groups who don't stand a chance making it across the street before someone who is doing 5 mph over speedlimit mows them down.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_5b89dff93bef873cb124209e11ee0d58.setContent(html_5e4a17ab16d1985b28c5e02720850d86);
+            
+        
+
+        circle_marker_b5766752bfc7ff6cf8d1c41f869e9a08.bindPopup(popup_5b89dff93bef873cb124209e11ee0d58)
+        ;
+
+        
+    
+    
+            var circle_marker_bb23043713d4d82916ee963fa5fb0644 = L.circleMarker(
+                [40.6189525236483, -111.28070454760386],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_b64d9d0ec5bb2884320e432329164705 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a0fe56dbc0a5b45b16c34a7dae554c4c = $(`<div id="html_a0fe56dbc0a5b45b16c34a7dae554c4c" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> other<br>     <b>ID:</b> 3501<br>     <b>Comments:</b> Put a pause on commercial development or change the zoning entirely.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_b64d9d0ec5bb2884320e432329164705.setContent(html_a0fe56dbc0a5b45b16c34a7dae554c4c);
+            
+        
+
+        circle_marker_bb23043713d4d82916ee963fa5fb0644.bindPopup(popup_b64d9d0ec5bb2884320e432329164705)
+        ;
+
+        
+    
+    
+            var circle_marker_5a6101daa2498cff5d74cc6fd6d296cf = L.circleMarker(
+                [40.643129816105436, -111.28073784702521],
+                {"bubblingMouseEvents": true, "color": "#48C9B0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#48C9B0", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_8348a8b5aaa94bb53a81a180925b528d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_7bc992c6b2d2b8bc49d251b7108d4c45 = $(`<div id="html_7bc992c6b2d2b8bc49d251b7108d4c45" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve walkable city centers<br>     <b>ID:</b> 5401<br>     <b>Comments:</b> reduce on-street parking. widen sidewalk. do a shared downtown lot.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_8348a8b5aaa94bb53a81a180925b528d.setContent(html_7bc992c6b2d2b8bc49d251b7108d4c45);
+            
+        
+
+        circle_marker_5a6101daa2498cff5d74cc6fd6d296cf.bindPopup(popup_8348a8b5aaa94bb53a81a180925b528d)
+        ;
+
+        
+    
+    
+            var circle_marker_a62bd3983b8fd20847b7f28f0fb3850f = L.circleMarker(
+                [40.64323593731792, -111.28075782667797],
+                {"bubblingMouseEvents": true, "color": "#2ECC71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ECC71", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_2b95f7caf5ed42ad3688cdc96f22d7b6 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b93b3ccb75ec2433a97c8263100e053a = $(`<div id="html_b93b3ccb75ec2433a97c8263100e053a" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> improve pedestrian crossing<br>     <b>ID:</b> 5701<br>     <b>Comments:</b> reduce speed. change parking. safer pedestrian crossing.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_2b95f7caf5ed42ad3688cdc96f22d7b6.setContent(html_b93b3ccb75ec2433a97c8263100e053a);
+            
+        
+
+        circle_marker_a62bd3983b8fd20847b7f28f0fb3850f.bindPopup(popup_2b95f7caf5ed42ad3688cdc96f22d7b6)
+        ;
+
+        
+    
+    
+            var circle_marker_ebcfef6a7b1a58f0e30ac1a93264cfe0 = L.circleMarker(
+                [40.64327383771006, -111.28076115662012],
+                {"bubblingMouseEvents": true, "color": "#B7950B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B7950B", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_98f34b12939089b58581fd605721a7c9 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_94578a9dab489d401e60c9d6b4971e55 = $(`<div id="html_94578a9dab489d401e60c9d6b4971e55" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> reduce parking<br>     <b>ID:</b> 5702<br>     <b>Comments:</b> reduce speed. change parking. safer pedestrian crossing.<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_98f34b12939089b58581fd605721a7c9.setContent(html_94578a9dab489d401e60c9d6b4971e55);
+            
+        
+
+        circle_marker_ebcfef6a7b1a58f0e30ac1a93264cfe0.bindPopup(popup_98f34b12939089b58581fd605721a7c9)
+        ;
+
+        
+    
+    
+            var circle_marker_ba7bd29415cc82a6c3da8396f8bdc93c = L.circleMarker(
+                [40.610639952650956, -111.28032992911399],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f97cad11c99ed3d4c46a25d89832602);
+        
+    
+        var popup_ed4f5699442b27fdff6a39bba324b066 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_59e7b143b315b26f48e7037e18a28fa8 = $(`<div id="html_59e7b143b315b26f48e7037e18a28fa8" style="width: 100.0%; height: 100.0%;">     <b>Category:</b> Speeding Issues<br>     <b>ID:</b> 7001<br>     <b>Comments:</b> sidewalk, traffic calming<br>     <b>Likes:</b> 0<br>     <b>Dislikes:</b> 0     </div>`)[0];
+                popup_ed4f5699442b27fdff6a39bba324b066.setContent(html_59e7b143b315b26f48e7037e18a28fa8);
+            
+        
+
+        circle_marker_ba7bd29415cc82a6c3da8396f8bdc93c.bindPopup(popup_ed4f5699442b27fdff6a39bba324b066)
+        ;
+
+        
+    
+</script>
+</html>
